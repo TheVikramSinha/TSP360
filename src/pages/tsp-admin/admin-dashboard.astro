@@ -1,0 +1,164 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Command Tower | Falcon Fleet 360">
+    <div slot="head">
+        <style>
+            .top-nav {
+                background: var(--bg-dark);
+                color: white;
+                padding: 12px 24px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+            
+            .nav-left {
+                display: flex;
+                align-items: center;
+                gap: 32px;
+            }
+            
+            .nav-brand {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                font-weight: 700;
+                font-size: 1.1rem;
+            }
+            
+            .nav-logo-icon {
+                color: var(--brand-primary);
+            }
+            
+            .nav-links {
+                display: flex;
+                gap: 24px;
+            }
+            
+            .nav-item {
+                color: rgba(255,255,255,0.7);
+                text-decoration: none;
+                font-size: 0.9rem;
+                font-weight: 500;
+                padding: 8px 12px;
+                border-radius: 6px;
+                transition: all 0.2s;
+            }
+            
+            .nav-item:hover, .nav-item.active {
+                color: white;
+                background: rgba(255,255,255,0.1);
+            }
+            
+            .nav-item.active {
+                background: var(--brand-primary);
+            }
+            
+            .nav-right {
+                display: flex;
+                align-items: center;
+                gap: 16px;
+            }
+            
+            .btn-ghost {
+                background: transparent;
+                border: 1px solid rgba(255,255,255,0.2);
+                color: white;
+                padding: 6px 12px;
+                border-radius: 6px;
+                font-size: 0.8rem;
+                cursor: pointer;
+                transition: all 0.2s;
+            }
+            
+            .btn-ghost:hover {
+                background: rgba(255,255,255,0.1);
+            }
+            
+            .container {
+                padding: 24px;
+                max-width: 1400px;
+                margin: 0 auto;
+            }
+            
+            .grid-cols-4 {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 20px;
+            }
+            
+            .grid-cols-2 {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+            
+            .text-muted {
+                color: var(--text-muted);
+            }
+        </style>
+    </div>
+
+    <nav class="top-nav">
+        <div class="nav-left">
+            <div class="nav-brand">
+                <div class="nav-logo-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+                </div>
+                <span>Falcon Fleet <span style="color:var(--brand-primary)">360</span></span>
+            </div>
+            <div class="nav-links">
+                <a href="/tsp-admin/admin-dashboard" class="nav-item active">Command Tower</a>
+                <a href="/tsp-admin/crm" class="nav-item">CRM & Sales</a>
+                <a href="/tsp-admin/directory" class="nav-item">Directory</a>
+                <a href="/tsp-admin/ops" class="nav-item">Ops Center</a>
+                <a href="/tsp-admin/billing" class="nav-item">Billing</a>
+                <a href="/tsp-admin/helpdesk" class="nav-item">Help Desk</a>
+            </div>
+        </div>
+        <div class="nav-right">
+            <span class="text-muted" style="font-size:12px;">Admin: <strong>S. Connors</strong></span>
+            <button class="btn-ghost">
+                <span style="color:#22c55e; margin-right:6px;">●</span> Live System
+            </button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="grid-cols-4" id="kpi-container" style="margin-bottom: 24px;">
+            <div class="card" style="padding:20px;">Loading Metrics...</div>
+        </div>
+
+        <div class="grid-cols-2">
+            <div class="card" style="display: flex; flex-direction: column;">
+                <div style="padding: 16px 20px; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center;">
+                    <div>
+                        <h3 style="margin:0; font-size:16px;">Marketplace Pulse</h3>
+                        <p class="text-muted" style="margin:4px 0 0 0; font-size:12px;">Live liquidity matching (Unmatched Loads).</p>
+                    </div>
+                </div>
+                <div style="padding: 20px;">
+                    <p>Marketplace functionality will be implemented here.</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div style="padding: 16px 20px; border-bottom: 1px solid var(--border-color);">
+                    <h3 style="margin:0; font-size:16px;">System Health</h3>
+                    <p class="text-muted" style="margin:4px 0 0 0; font-size:12px;">Overall system status and performance.</p>
+                </div>
+                <div style="padding: 20px;">
+                    <p>System health metrics will be displayed here.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script client:load>
+        // Admin dashboard functionality
+        console.log('Admin dashboard loaded');
+    </script>
+</Layout>
